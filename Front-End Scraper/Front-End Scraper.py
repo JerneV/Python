@@ -35,7 +35,6 @@ soup2 = BeautifulSoup(requests.get("https://nhentai.net/g/" + code + "/1/").cont
 # Using some more BS4 we find the image link
 imageSource = str([x['src'] for x in soup2.findAll('img', {'class': 'fit-horizontal'})][0])
 # The link we get ends on /1.jpg or something, we don't need that. Delete it with this (lazy method) 
-length = len(imageSource)
 imagePreLink = imageSource[:-5]
 
 ## Then we're ready for the download
